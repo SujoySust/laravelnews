@@ -11,8 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('front.home');
+Route::get('/', 'HomePageController@index');
+Route::get('/listing', 'ListingPageController@index');
+Route::get('/details', 'DetailsPageController@index');
+
+
+Route::group(['prefix'=>'back'],function (){
+    Route::get('/','AdminDashboardController@index');
+    Route::get('/category','AdminCategoryController@index');
+    Route::get('/category/create','AdminCategoryController@create');
+    Route::get('/category/edit','AdminCategoryController@edit');
 });
-
-

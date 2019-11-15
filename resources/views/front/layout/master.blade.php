@@ -21,6 +21,8 @@
             <!-- header_section_wrapper -->
                 @yield('content')
 
+                @include('front.layout.footer')
+
 
             <!-- Subscriber Section -->
         </div>
